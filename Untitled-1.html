@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Selma A S | Cybersecurity Analyst</title>
+
+<meta name="description"
+content="Selma A S — Cybersecurity Analyst, VAPT enthusiast and security researcher.">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080b10;
+    color: #e6edf3;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.02) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+
+    background: #f0883e;
+
+    opacity: 0.18;
+
+    animation: scan 7s linear infinite;
+
+    pointer-events: none;
+    z-index: 999;
+}
+
+@keyframes scan {
+
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(8,11,16,0.92);
+
+    border-bottom: 1px solid #202832;
+
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+
+    font-weight: 800;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #f0883e;
+}
+
+.nav-links {
+
+    display: flex;
+
+    gap: 25px;
+}
+
+.nav-links a {
+
+    color: #8b949e;
+
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #f0883e;
+}
+
+.github-button {
+
+    border: 1px solid #303944;
+
+    padding: 9px 15px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+.github-button:hover {
+
+    border-color: #f0883e;
+
+    color: #f0883e;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: calc(100vh - 70px);
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    gap: 8%;
+
+    align-items: center;
+
+    padding: 8%;
+
+    border-bottom: 1px solid #202832;
+}
+
+.status {
+
+    color: #8b949e;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.status::before {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 7px;
+
+    height: 7px;
+
+    margin-right: 8px;
+
+    background: #3fb950;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 12px #3fb950;
+}
+
+.hero h1 {
+
+    font-size: clamp(80px, 12vw, 155px);
+
+    line-height: 0.75;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 35px;
+
+    font-weight: 800;
+}
+
+.orange {
+    color: #f0883e;
+}
+
+.hero h2 {
+
+    font-size: 21px;
+
+    margin-bottom: 20px;
+}
+
+.hero h2 span {
+    color: #f0883e;
+}
+
+.hero-description {
+
+    max-width: 650px;
+
+    color: #9aa6b2;
+
+    font-size: 16px;
+}
+
+.buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+}
+
+.button {
+
+    padding: 13px 20px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.primary {
+
+    background: #f0883e;
+
+    color: #080b10;
+
+    border: 1px solid #f0883e;
+}
+
+.primary:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(240,136,62,0.35);
+}
+
+.secondary {
+
+    border: 1px solid #303944;
+}
+
+.secondary:hover {
+
+    color: #f0883e;
+
+    border-color: #f0883e;
+}
+
+
+/* =========================================================
+   TERMINAL
+========================================================= */
+
+.terminal {
+
+    background: #0d1117;
+
+    border: 1px solid #303944;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 60px rgba(240,136,62,0.08);
+}
+
+.terminal-header {
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 15px;
+
+    border-bottom: 1px solid #252d36;
+}
+
+.terminal-header i {
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #30363d;
+}
+
+.terminal-title {
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    color: #687582;
+
+    font-size: 11px;
+}
+
+.terminal-body {
+
+    padding: 25px;
+
+    font-family: monospace;
+
+    color: #a8b3be;
+
+    font-size: 13px;
+}
+
+.terminal-body p {
+
+    margin-bottom: 12px;
+}
+
+.prompt {
+    color: #f0883e;
+}
+
+.green {
+    color: #3fb950;
+}
+
+.cursor {
+
+    color: #f0883e;
+
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+
+    padding: 100px 8%;
+
+    border-bottom: 1px solid #202832;
+}
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 50px;
+}
+
+.section-number {
+
+    color: #f0883e;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+
+    font-size: 42px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 8%;
+}
+
+.about h3 {
+
+    font-size: 25px;
+
+    line-height: 1.3;
+
+    margin-bottom: 20px;
+}
+
+.about p {
+
+    color: #9aa6b2;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.about-card {
+
+    border-left: 2px solid #f0883e;
+
+    padding-left: 25px;
+
+    display: grid;
+
+    gap: 25px;
+}
+
+.about-card small {
+
+    display: block;
+
+    color: #687582;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.about-card strong {
+
+    display: block;
+
+    font-size: 15px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+.skill {
+
+    padding: 28px;
+
+    background: #0d1117;
+
+    border: 1px solid #252e38;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.skill:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #f0883e;
+}
+
+.skill-icon {
+
+    font-size: 28px;
+
+    color: #f0883e;
+
+    margin-bottom: 10px;
+}
+
+.skill h3 {
+
+    margin-bottom: 8px;
+}
+
+.skill p {
+
+    color: #8b949e;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+.project {
+
+    min-height: 245px;
+
+    padding: 28px;
+
+    background: #0d1117;
+
+    border: 1px solid #252e38;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.project:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #f0883e;
+}
+
+.project.featured {
+
+    border-color: #70431f;
+
+    background:
+        linear-gradient(
+            145deg,
+            #16100c,
+            #0d1117
+        );
+}
+
+.project-number {
+
+    color: #f0883e;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.project h3 {
+
+    font-size: 21px;
+
+    margin: 14px 0 10px;
+}
+
+.project p {
+
+    color: #8b949e;
+
+    font-size: 13px;
+}
+
+.tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 20px;
+}
+
+.tag {
+
+    padding: 5px 8px;
+
+    border: 1px solid #303944;
+
+    border-radius: 5px;
+
+    color: #aeb8c2;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.timeline {
+
+    border-left: 1px solid #303944;
+
+    margin-left: 5px;
+}
+
+.timeline-item {
+
+    display: grid;
+
+    grid-template-columns: 120px 1fr;
+
+    gap: 30px;
+
+    position: relative;
+
+    padding: 0 0 40px 30px;
+}
+
+.timeline-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -5px;
+
+    top: 4px;
+
+    width: 9px;
+
+    height: 9px;
+
+    background: #f0883e;
+
+    border-radius: 50%;
+}
+
+.timeline-label {
+
+    color: #f0883e;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.timeline-item h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 6px;
+}
+
+.timeline-item p {
+
+    color: #8b949e;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.certifications {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+.cert {
+
+    padding: 25px;
+
+    background: #0d1117;
+
+    border: 1px solid #252e38;
+
+    border-radius: 8px;
+}
+
+.cert-number {
+
+    color: #f0883e;
+
+    font-size: 28px;
+
+    font-weight: bold;
+}
+
+.cert h3 {
+
+    margin: 12px 0 8px;
+
+    font-size: 17px;
+}
+
+.cert p {
+
+    color: #8b949e;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESEARCH
+========================================================= */
+
+.research {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+.research-box {
+
+    padding: 28px;
+
+    background: #0d1117;
+
+    border: 1px solid #252e38;
+
+    border-radius: 8px;
+}
+
+.research-box strong {
+
+    color: #f0883e;
+
+    font-size: 30px;
+}
+
+.research-box h3 {
+
+    margin: 10px 0;
+}
+
+.research-box p {
+
+    color: #8b949e;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+
+    padding: 120px 8%;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(240,136,62,0.1),
+            transparent 45%
+        );
+}
+
+.contact h2 {
+
+    font-size: clamp(60px, 9vw, 110px);
+
+    line-height: 0.8;
+
+    margin: 25px 0;
+}
+
+.contact h2 span {
+
+    color: #f0883e;
+}
+
+.contact p {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #9aa6b2;
+}
+
+.contact .buttons {
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 25px 8%;
+
+    color: #687582;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero,
+    .about {
+
+        grid-template-columns: 1fr;
+    }
+
+    .terminal {
+
+        margin-top: 30px;
+    }
+
+    .skills,
+    .research,
+    .certifications {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media(max-width: 600px) {
+
+    .hero,
+    .section,
+    .contact {
+
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .hero h1 {
+
+        font-size: 80px;
+
+        letter-spacing: -3px;
+    }
+
+    .skills,
+    .projects,
+    .research,
+    .certifications {
+
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+
+        padding-top: 70px;
+
+        padding-bottom: 70px;
+    }
+
+    .section-heading h2 {
+
+        font-size: 35px;
+    }
+
+    .timeline-item {
+
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+    }
+
+    footer {
+
+        display: block;
+
+        padding: 20px 6%;
+    }
+
+    footer div {
+
+        margin: 5px 0;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+        SELMA<span>_A S</span>
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#experience">Experience</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+    <a
+        class="github-button"
+        href="https://github.com/zoho-design"
+        target="_blank"
+    >
+        GitHub ↗
+    </a>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section id="home" class="hero">
+
+    <div>
+
+        <div class="status">
+            CYBERSECURITY • VAPT • SECURITY RESEARCH
+        </div>
+
+        <h1>
+            SELMA
+            <span class="WHITE">A S.</span>
+        </h1>
+
+        <h2>
+            Cybersecurity Analyst
+            <span>/</span>
+            VAPT Enthusiast
+        </h2>
+
+        <p class="hero-description">
+
+            Cybersecurity professional focused on vulnerability
+            assessment, penetration testing, security monitoring,
+            threat intelligence and practical security research.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                class="button primary"
+                href="#projects"
+            >
+                Explore Projects
+            </a>
+
+            <a
+                class="button secondary"
+                href="https://www.linkedin.com/in/selma-a-s-ba9bb9264/"
+                target="_blank"
+            >
+                LinkedIn ↗
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- TERMINAL -->
+
+    <div class="terminal">
+
+        <div class="terminal-header">
+
+            <i></i>
+            <i></i>
+            <i></i>
+
+            <div class="terminal-title">
+                selma@security:~
+            </div>
+
+        </div>
+
+
+        <div class="terminal-body">
+
+            <p>
+                <span class="prompt">$</span>
+                whoami
+            </p>
+
+            <p class="orange">
+                selma_a_s
+            </p>
+
+
+            <p>
+                <span class="prompt">$</span>
+                role
+            </p>
+
+            <p>
+                Cybersecurity Analyst
+            </p>
+
+
+            <p>
+                <span class="prompt">$</span>
+                specialization
+            </p>
+
+            <p>
+                VAPT / Penetration Testing
+            </p>
+
+
+            <p>
+                <span class="prompt">$</span>
+                tools
+            </p>
+
+            <p>
+                Nmap · Burp Suite · Wazuh · Splunk
+            </p>
+
+
+            <p>
+                <span class="prompt">$</span>
+                status
+            </p>
+
+            <p class="green">
+                ● SECURITY MODE ACTIVE
+            </p>
+
+
+            <p>
+                <span class="prompt">$</span>
+                mission
+            </p>
+
+            <p>
+                Find weaknesses. Build defenses.
+            </p>
+
+
+            <span class="cursor">
+                █
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about" class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            01
+        </span>
+
+        <h2>
+            ABOUT ME
+        </h2>
+
+    </div>
+
+
+    <div class="about">
+
+        <div>
+
+            <h3>
+                Building skills. Finding vulnerabilities.
+                Creating secure systems.
+            </h3>
+
+
+            <p>
+
+                I am Selma A S, a cybersecurity professional
+                with a strong interest in Vulnerability Assessment
+                and Penetration Testing, SOC operations,
+                application security and security research.
+
+            </p>
+
+
+            <p>
+
+                I enjoy learning through hands-on labs and
+                security projects involving web applications,
+                APIs, networks, Linux, Windows, SIEM platforms
+                and threat intelligence.
+
+            </p>
+
+
+            <p>
+
+                My goal is to grow into a technically strong
+                cybersecurity specialist and contribute to
+                secure and resilient digital systems.
+
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div>
+
+                <small>
+                    LOCATION
+                </small>
+
+                <strong>
+                    Kerala, India
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    CURRENT ROLE
+                </small>
+
+                <strong>
+                    Cybersecurity Professional
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    CAREER PATH
+                </small>
+
+                <strong>
+                    VAPT / Penetration Testing
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <small>
+                    INTERESTS
+                </small>
+
+                <strong>
+                    AppSec · SOC · GNSS Security
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills" class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            02
+        </span>
+
+        <h2>
+            CYBERSECURITY TOOLKIT
+        </h2>
+
+    </div>
+
+
+    <div class="skills">
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                ⌁
+            </div>
+
+            <h3>
+                VAPT & AppSec
+            </h3>
+
+            <p>
+                Nmap · Burp Suite · OWASP · Gobuster ·
+                WhatWeb · SQLMap · Metasploit
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                ◈
+            </div>
+
+            <h3>
+                SOC & Blue Team
+            </h3>
+
+            <p>
+                Wazuh · Splunk · SIEM · IOC Analysis ·
+                Alert Triage · Log Analysis
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                ⌘
+            </div>
+
+            <h3>
+                Networking
+            </h3>
+
+            <p>
+                TCP/IP · OSI · DNS · VPN · Firewalls ·
+                Wireshark · Network Reconnaissance
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                ▣
+            </div>
+
+            <h3>
+                Security Fundamentals
+            </h3>
+
+            <p>
+                Linux · Windows Security · Authentication ·
+                Cryptography · Access Control
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                ☁
+            </div>
+
+            <h3>
+                Cloud Security
+            </h3>
+
+            <p>
+                AWS · IAM · S3 · VPC · Security Groups ·
+                NACL
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-icon">
+                ⚙
+            </div>
+
+            <h3>
+                Programming
+            </h3>
+
+            <p>
+                Python · SQL · APIs · Git · GitHub ·
+                JavaScript
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects" class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            03
+        </span>
+
+        <h2>
+            FEATURED PROJECTS
+        </h2>
+
+    </div>
+
+
+    <div class="projects">
+
+
+        <!-- PROJECT 1 -->
+
+        <article class="project featured">
+
+            <div class="project-number">
+                PROJECT 01
+            </div>
+
+            <h3>
+                AetherSat Mobile
+            </h3>
+
+            <p>
+
+                Security-aware satellite tracking and field
+                utility combining GNSS diagnostics, satellite
+                pass prediction, antenna alignment and network
+                quality monitoring.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span class="tag">
+                    GNSS
+                </span>
+
+                <span class="tag">
+                    Satellite Security
+                </span>
+
+                <span class="tag">
+                    Mobile
+                </span>
+
+                <span class="tag">
+                    Cloud
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 2 -->
+
+        <article class="project">
+
+            <div class="project-number">
+                PROJECT 02
+            </div>
+
+            <h3>
+                Forensic USB Security Solution
+            </h3>
+
+            <p>
+
+                Real-time USB malware detection and forensic
+                logging solution using open-source antivirus,
+                quarantine, whitelist/blacklist controls and
+                security alerts.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span class="tag">
+                    ClamAV
+                </span>
+
+                <span class="tag">
+                    Python
+                </span>
+
+                <span class="tag">
+                    SQLite
+                </span>
+
+                <span class="tag">
+                    Forensics
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 3 -->
+
+        <article class="project">
+
+            <div class="project-number">
+                PROJECT 03
+            </div>
+
+            <h3>
+                Phishing URL Detector
+            </h3>
+
+            <p>
+
+                Security project focused on identifying
+                suspicious URLs using URL analysis and
+                threat indicators.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span class="tag">
+                    Python
+                </span>
+
+                <span class="tag">
+                    Threat Intelligence
+                </span>
+
+                <span class="tag">
+                    Web Security
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 4 -->
+
+        <article class="project">
+
+            <div class="project-number">
+                PROJECT 04
+            </div>
+
+            <h3>
+                SOC Security Lab
+            </h3>
+
+            <p>
+
+                Hands-on security monitoring environment
+                exploring log collection, parsing, dashboards,
+                IOC analysis, alert triage and SIEM workflows.
+
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    Wazuh
+                </span>
+
+                <span class="tag">
+                    Splunk
+                </span>
+
+                <span class="tag">
+                    SIEM
+                </span>
+
+                <span class="tag">
+                    SOC
+                </span>
+
+            </div>
+
+        </article>
+  <!-- PROJECT 5 -->
+
+<article class="project">
+
+    <div class="project-number">
+        PROJECT 05
+    </div>
+
+    <h3>
+        Cybersecurity Framework for Satellite Communication Systems
+    </h3>
+
+    <p>
+
+        Research project focused on threat analysis, vulnerability
+        assessment and security mitigation strategies for satellite
+        communication systems. The study examines cyber threats
+        affecting ground stations, communication links and satellite
+        payloads while proposing a layered defense framework using
+        encryption, authentication, intrusion detection, AI-based
+        monitoring and Zero Trust principles.
+
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">
+            Satellite Security
+        </span>
+
+        <span class="tag">
+            Threat Analysis
+        </span>
+
+        <span class="tag">
+            Vulnerability Assessment
+        </span>
+
+        <span class="tag">
+            Encryption
+        </span>
+
+        <span class="tag">
+            IDS
+        </span>
+
+        <span class="tag">
+            Zero Trust
+        </span>
+
+    </div>
+    </article>
+<!-- PROJECT 6 -->
+
+<article class="project">
+
+    <div class="project-number">
+        PROJECT 06
+    </div>
+
+    <h3>
+        SOC Home Lab
+    </h3>
+
+    <p>
+
+        A practical Security Operations Center home lab designed to
+        simulate real-world security monitoring, threat detection and
+        incident response. The project integrates Splunk Enterprise,
+        Sysmon, Splunk Universal Forwarder, Windows 11 and Kali Linux,
+        with Atomic Red Team used to simulate adversary techniques
+        and generate realistic attack scenarios.
+
+        The lab focuses on centralized log collection, security event
+        analysis, threat hunting, detection engineering, alert triage
+        and incident response. Attack scenarios including brute-force
+        login attempts, PowerShell activity and suspicious process
+        execution are simulated to evaluate detection capabilities
+        using Splunk searches, dashboards and alerts.
+
+    </p>
+
+    <div class="tags">
+
+        <span class="tag">
+            Splunk Enterprise
+        </span>
+
+        <span class="tag">
+            Sysmon
+        </span>
+
+        <span class="tag">
+            Splunk Universal Forwarder
+        </span>
+
+        <span class="tag">
+            Windows 11
+        </span>
+
+        <span class="tag">
+            Kali Linux
+        </span>
+
+        <span class="tag">
+            Atomic Red Team
+        </span>
+
+        <span class="tag">
+            SIEM
+        </span>
+
+        <span class="tag">
+            Threat Hunting
+        </span>
+
+        <span class="tag">
+            Incident Response
+        </span>
+
+    </div>
+
+
+</article>
+
+</article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section id="experience" class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            04
+        </span>
+
+        <h2>
+            EXPERIENCE & LEARNING
+        </h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-label">
+                CURRENT
+            </div>
+
+            <div>
+
+                <h3>
+                    Cozmek Private Limited
+                </h3>
+
+                <p>
+
+                    Cybersecurity-focused professional experience
+                    in Ernakulam with continued development of
+                    practical security and technical skills.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-label">
+                INTERNSHIP
+            </div>
+
+            <div>
+
+                <h3>
+                    Cyber Forensics
+                </h3>
+
+                <p>
+
+                    Exposure to forensic tools, investigation
+                    concepts and cybersecurity case studies.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-label">
+                TRAINING
+            </div>
+
+            <div>
+
+                <h3>
+                    Penetration Testing & Ethical Hacking
+                </h3>
+
+                <p>
+
+                    Training exposure covering Windows security,
+                    penetration testing concepts and ethical
+                    hacking fundamentals.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-label">
+                CERTIFICATION
+            </div>
+
+            <div>
+
+                <h3>
+                    Google Cybersecurity Certificate
+                </h3>
+
+                <p>
+
+                    Cybersecurity foundations, security operations,
+                    risk management and defensive security concepts.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-label">
+                DEVELOPMENT
+            </div>
+
+            <div>
+
+                <h3>
+                    Python Full Stack Development
+                </h3>
+
+                <p>
+
+                    Practical development exposure including
+                    Python, SQL and application development
+                    fundamentals.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CERTIFICATIONS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            05
+        </span>
+
+        <h2>
+            CERTIFICATIONS & TRAINING
+        </h2>
+
+    </div>
+
+
+    <div class="certifications">
+
+
+        <div class="cert">
+
+            <div class="cert-number">
+                01
+            </div>
+
+            <h3>
+                Google Cybersecurity
+            </h3>
+
+            <p>
+                Cybersecurity professional certificate
+                and foundational security learning.
+            </p>
+
+        </div>
+
+
+        <div class="cert">
+
+            <div class="cert-number">
+                02
+            </div>
+
+            <h3>
+                Penetration Testing
+            </h3>
+
+            <p>
+                Training exposure in ethical hacking,
+                Windows penetration testing and security.
+            </p>
+
+        </div>
+
+
+        <div class="cert">
+
+            <div class="cert-number">
+                03
+            </div>
+
+            <h3>
+                Cyber Forensics
+            </h3>
+
+            <p>
+                Practical exposure to forensic tools
+                and investigation case studies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RESEARCH
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            06
+        </span>
+
+        <h2>
+            SECURITY INTERESTS
+        </h2>
+
+    </div>
+
+
+    <div class="research">
+
+
+        <div class="research-box">
+
+            <strong>
+                01
+            </strong>
+
+            <h3>
+                Satellite Cybersecurity
+            </h3>
+
+            <p>
+
+                Exploring cybersecurity considerations
+                for satellite communication, GNSS and
+                space-connected infrastructure.
+
+            </p>
+
+        </div>
+
+
+        <div class="research-box">
+
+            <strong>
+                02
+            </strong>
+
+            <h3>
+                Vulnerability Research
+            </h3>
+
+            <p>
+
+                Web application testing, API security,
+                reconnaissance and vulnerability discovery.
+
+            </p>
+
+        </div>
+
+
+        <div class="research-box">
+
+            <strong>
+                03
+            </strong>
+
+            <h3>
+                Security Operations
+            </h3>
+
+            <p>
+
+                Threat intelligence, IOC analysis,
+                SIEM monitoring and incident response.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact" class="contact">
+
+    <div class="status">
+    </div>
+<section id="contact" class="contact">
+
+    <div class="status">
+      
+    </div>
+
+    <h2>
+        Let's Connect
+    </h2>
+
+    <p>
+        Interested in cybersecurity, VAPT, penetration testing,
+        SOC operations, or space cybersecurity? Feel free to get in touch.
+    </p>
+
+    <div class="contact-details">
+
+        <!-- PHONE -->
+        <div class="contact-item">
+            <span class="contact-label">
+                PHONE
+            </span>
+
+            <a href="tel:+917736022480">
+                +91 77360 22480
+            </a>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="contact-item">
+            <span class="contact-label">
+                EMAIL
+            </span>
+
+            <a href="mailto:selmaanilstephan@gmail.com">
+                selmaanilstephan@gmail.com
+            </a>
+        </div>
+
+        <!-- LINKEDIN -->
+        <div class="contact-item">
+            <span class="contact-label">  
+    </div>
+
+</section>
+
+    <h2>
+
+        LET'S BUILD<br>
+
+        <span>
+            SECURE SYSTEMS.
+        </span>
+
+    </h2>
+
+
+    <p>
+
+        Interested in cybersecurity, VAPT,
+        security research or collaboration?
+
+        Let's connect.
+
+    </p>
+
+
+    <div class="buttons">
+
+        <a
+            class="button primary"
+            href="https://www.linkedin.com/in/selma-a-s-ba9bb9264/"
+            target="_blank"
+        >
+            Connect on LinkedIn ↗
+        </a>
+
+
+        <a
+            class="button secondary"
+            href="https://github.com/zoho-design"
+            target="_blank"
+        >
+            View GitHub ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div>
+        © 2026 Selma A S
+    </div>
+
+    <div>
+        CYBERSECURITY • VAPT • SECURITY RESEARCH
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* Smooth scrolling */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            function(event) {
+
+                const target =
+                    document.querySelector(
+                        this.getAttribute("href")
+                    );
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                }
+
+            }
+        );
+
+    });
+
+
+/* Terminal animation */
+
+const terminalLines =
+    document.querySelectorAll(
+        ".terminal-body p"
+    );
+
+terminalLines.forEach(
+    (line, index) => {
+
+        line.style.opacity = "0";
+
+        setTimeout(
+            () => {
+
+                line.style.transition =
+                    "opacity 0.4s";
+
+                line.style.opacity = "1";
+
+            },
+            index * 180
+        );
+
+    }
+);
+
+
+/* Reveal sections when scrolling */
+
+const sections =
+    document.querySelectorAll(
+        ".section, .contact"
+    );
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.style.opacity = "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: 0.1
+        }
+    );
+
+
+sections.forEach(section => {
+
+    section.style.opacity = "0";
+
+    section.style.transform =
+        "translateY(25px)";
+
+    section.style.transition =
+        "opacity 0.7s ease, transform 0.7s ease";
+
+    observer.observe(section);
+
+});
+
+</script>
+
+
+</body>
+</html>
+
